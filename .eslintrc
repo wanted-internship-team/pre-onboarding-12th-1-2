@@ -14,6 +14,11 @@
   },
   "parser": "@typescript-eslint/parser",
 
+  // node 추가 (tailwind)
+  "env": {
+    "node": true
+  },
+
   // 파서 옵션 설정
   "parserOptions": {
     "ecmaFeatures": {
