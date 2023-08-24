@@ -2,24 +2,24 @@ import { useState } from 'react';
 import { REG } from '../constants';
 import { IAuthInfo } from '../types/api';
 
-interface VaildValues {
+interface IVaildValues {
   email: boolean;
   password: boolean;
 }
-interface Props {
+interface IProps {
   initialValues: IAuthInfo;
 }
 
-const useForm = ({ initialValues }: Props) => {
+const useForm = ({ initialValues }: IProps) => {
   const [values, setValues] = useState<IAuthInfo>(initialValues);
-  const [isValid, setIsValid] = useState<VaildValues>({
+  const [validValues, setValidValues] = useState<IVaildValues>({
     email: false,
     password: false,
   });
 
   // 유효성 검사
   const checkValidation = (name: string, value: string) => {
-    setIsValid((prevValues) => ({
+    setValidValues((prevValues) => ({
       ...prevValues,
       [name]: (REG as Record<string, RegExp>)[name].test(value),
     }));
@@ -30,7 +30,7 @@ const useForm = ({ initialValues }: Props) => {
     checkValidation(name, value);
   };
 
-  return { values, isValid, handleChange };
+  return { values, validValues, handleChange };
 };
 
 export default useForm;
