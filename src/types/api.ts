@@ -1,6 +1,6 @@
 // 1-1, 1-2
 // 회원가입, 로그인 요청
-export interface IAuthRequest {
+export interface IAuthInfo {
   email: string;
   password: string;
 }
