@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { postSignUp } from '../api/requests';
+import { postSignIn } from '../api/requests';
 import useForm from '../hooks/useForm';
 import Form from '../components/auth/Form';
 
-export default function SignUp() {
+export default function SignIn() {
   const navigate = useNavigate();
 
   const { values, validValues, handleChange } = useForm({
@@ -14,10 +14,11 @@ export default function SignUp() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await postSignUp(values);
-      if (res.status === 201) {
-        alert('회원가입이 완료되었습니다. 로그인을 진행해주세요.');
-        navigate('/signin');
+      const res = await postSignIn(values);
+      if (res.status === 200) {
+        alert('로그인 되었습니다!');
+        localStorage.setItem('access_token', res.data.access_token);
+        navigate('/todo');
       }
     } catch (err) {
       console.error(err);
@@ -26,13 +27,13 @@ export default function SignUp() {
 
   return (
     <>
-      <h1>회원가입</h1>
+      <h1>로그인</h1>
       <Form
+        handleSubmit={handleSubmit}
         values={values}
         validValues={validValues}
-        handleSubmit={handleSubmit}
         handleChange={handleChange}
-        pageName='signUp'
+        pageName='signIn'
       />
     </>
   );
