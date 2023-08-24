@@ -4,14 +4,24 @@ import { DATA_TEST_ID } from '../constants';
 import { URL } from '../constants';
 import Input from '../components/auth/Input';
 import useForm from '../hooks/useForm';
+import { postSignUp } from '../api/requests';
 
 export default function SignUp() {
   const { values, isValid, handleChange } = useForm({ initialValues: { email: '', password: '' } });
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      await postSignUp(values);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <>
       <h1>회원가입</h1>
-      <form className='w-full max-w-sm gap-4'>
+      <form className='w-full max-w-sm gap-4' onSubmit={handleSubmit}>
         <Input
           id='email'
           type='email'
