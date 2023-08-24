@@ -7,4 +7,4 @@ export interface ITodo {
 }
 
 // 전체 Todo
-export type TodoList = ITodo[];
+export type ITodoList = ITodo[];
