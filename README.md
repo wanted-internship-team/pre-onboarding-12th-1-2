@@ -2,11 +2,13 @@
 
 ## 🤝 과제 소개 및 목적
 팀원 모두가 하나의 주제의 과제를 수행한 뒤, 가장 효율적이라고 판단되는 코드(또는 기능)을 Best Practice로 선정하여 최종 결과물에 반영합니다.
-
 Best Practice를 선정하기 위해 작성한 코드를 동료에게 이해하기 쉽게 설명하고, 타인의 코드를 이해할 수 있어야 합니다.
 
 💡 좋은 코드를 만들기 위해 고민하고, 그 과정에서 팀으로 일하는 법에 익숙해집니다.
 
+🗓️ 진행 기간: 23년 8월 22일 ~ 23년 8월 25일
+
+※ 본 과제는 [원티드 프리온보딩 선발 과제](https://github.com/walking-sunset/selection-task)를 바탕으로 진행되었습니다. 
 
 ## 👨‍👩‍👧‍👦 팀 정보
 [Team Notion](https://www.notion.so/Wanted-Pre-onboarding-FE-2-71038c8adfd74fffb28a3cf2d182e025?pvs=21)
