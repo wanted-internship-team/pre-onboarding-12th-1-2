@@ -1,7 +1,7 @@
 import React from 'react';
 import { deleteTodo, putTodo } from '../../api/requests';
 import { ITodo } from '../../types/todo';
-import TodoItem from '../todo/TodoItem';
+import TodoItem from './TodoItem';
 import { IUpdateTodoRequest, IDeleteTodoRequest } from '../../types/api';
 import { useTodoContext } from '../../context/TodoContext';
 

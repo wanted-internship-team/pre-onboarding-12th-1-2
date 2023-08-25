@@ -1,27 +1,38 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Main from '../pages/Main';
-import SignUp from '../pages/SignUp';
-import SignIn from '../pages/SignIn';
-import Todo from '../pages/Todo';
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
+import SignUp from '../pages/Auth/SignUp';
+import SignIn from '../pages/Auth/SignIn';
+import Todo from '../pages/Todo/Todo';
+import PublicRoute from '../pages/Authenticated/PublicRoute';
+import PrivateRoute from '../pages/Authenticated/PrivateRoute';
+import { AuthProvider } from '../context/AuthContext';
 import { TodoProvider } from '../context/TodoContext';
 
 export default function Router() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/signup' element={<SignUp />} />
-        <Route path='/signin' element={<SignIn />} />
-        <Route
-          path='/todo'
-          element={
-            <TodoProvider>
-              <Todo />
-            </TodoProvider>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          {/* Public */}
+          <Route element={<PublicRoute />}>
+            <Route path='/' element={<Navigate to='/signin' />} />
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='/signin' element={<SignIn />} />
+          </Route>
+
+          {/* Private */}
+          <Route element={<PrivateRoute />}>
+            <Route
+              path='/todo'
+              element={
+                <TodoProvider>
+                  <Todo />
+                </TodoProvider>
+              }
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
