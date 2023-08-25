@@ -75,7 +75,10 @@ export default function TodoItem({ todoData, onClickUpdate, onClickDelete }: ITo
               <button
                 type='button'
                 data-test-id={DATA_TEST_ID.BUTTON.TODO_CANCEL}
-                onClick={() => setIsEditMode(false)}
+                onClick={() => {
+                  setContent(todo);
+                  setIsEditMode(false);
+                }}
                 className='bg-red-400 hover:bg-red-500 text-xs text-white font-medium py-1 px-2 mx-1 rounded focus:outline-none focus:shadow-outline'
               >
                 취소
