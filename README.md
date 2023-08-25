@@ -217,7 +217,7 @@ pages와 components 폴더를 주축으로 하고 api, hook 등 추가적으로 
 - 비밀번호 조건: 8자 이상
 - 입력된 이메일과 비밀번호가 유효성 검사를 통과하지 못한다면 button에 `disabled` 속성을 부여해 주세요
     
-    ![validation.gif](README%20%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8%20d5eecaf7ac094bbc8d3b6b15df624b74/validation.gif)
+    ![validation.gif](https://file.notion.so/f/s/79b3c3d3-6656-4d36-9d58-1bd765ede123/validation.gif?id=0f7aa616-bfe7-4088-a7a4-0be6cdff974b&table=block&spaceId=bbc3fe92-b2d5-40ed-9b1e-7d5b1ae55858&expirationTimestamp=1693065600000&signature=2ZecVebUffj8prhCY5d2ttuXFpLE2-wJhoa8ml0i-6M&downloadName=validation.gif)
 
 ### ⭐️ **Best Practice**
 
@@ -236,7 +236,7 @@ pages와 components 폴더를 주축으로 하고 api, hook 등 추가적으로 
     - 로그인 API는 로그인이 성공했을 시 Response Body에 JWT를 포함해서 응답합니다.
     - 응답받은 JWT는 로컬 스토리지에 저장해 주세요
         
-        ![redirect.gif](README%20%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8%20d5eecaf7ac094bbc8d3b6b15df624b74/redirect.gif)
+        ![redirect.gif](https://file.notion.so/f/s/7af54be6-5cd9-4467-9b2a-278cbef032fa/redirect.gif?id=afd79f3f-7e98-4686-aa91-307b4ca4a36c&table=block&spaceId=bbc3fe92-b2d5-40ed-9b1e-7d5b1ae55858&expirationTimestamp=1693065600000&signature=bWVZdD4Mrvcz56JlH4x3DsZ5IXThvma9-UtofDfzkSE&downloadName=redirect.gif)
       
 ### ✅ Assignment 3
 
@@ -244,7 +244,7 @@ pages와 components 폴더를 주축으로 하고 api, hook 등 추가적으로 
     - 로컬 스토리지에 토큰이 있는 상태로 `/signin` 또는 `/signup` 페이지에 접속한다면 `/todo` 경로로 리다이렉트 시켜주세요
     - 로컬 스토리지에 토큰이 없는 상태로 `/todo`페이지에 접속한다면 `/signin` 경로로 리다이렉트 시켜주세요
         
-        ![tokenRedirect.gif](README%20%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8%20d5eecaf7ac094bbc8d3b6b15df624b74/tokenRedirect.gif)
+        ![tokenRedirect.gif](https://file.notion.so/f/s/dd95e340-e55b-4647-9c54-3f694a918a18/tokenRedirect.gif?id=3b293d60-9331-4fa2-902a-be8406041d7f&table=block&spaceId=bbc3fe92-b2d5-40ed-9b1e-7d5b1ae55858&expirationTimestamp=1693065600000&signature=EX4ZlAPsQI6q6LxT4Av3htGE3s0DteG19zWR7Id_Hwk&downloadName=tokenRedirect.gif)
      
 ### ⭐️ **Best Practice**
 
@@ -291,7 +291,7 @@ pages와 components 폴더를 주축으로 하고 api, hook 등 추가적으로 
     - TODO의 체크박스를 통해 완료 여부를 수정할 수 있도록 해주세요.
     - 투두 리스트의 TODO 우측의 [삭제] 버튼을 누르면 해당 아이템이 삭제되도록 해주세요
         
-        ![todoCRUD.gif](README%20%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8%20d5eecaf7ac094bbc8d3b6b15df624b74/todoCRUD.gif)
+        ![todoCRUD.gif](https://file.notion.so/f/s/9c35e789-6f26-46bc-a5e8-ce02f4db4839/todoCRUD.gif?id=785b0647-4ebd-4bb9-8775-37e263216c42&table=block&spaceId=bbc3fe92-b2d5-40ed-9b1e-7d5b1ae55858&expirationTimestamp=1693065600000&signature=NFThmqP_sb_gxAyPehc8Sp79YBbOPp2QzpjNfgyk3zA&downloadName=todoCRUD.gif)
    
 ### ⭐️ **Best Practice**
 
@@ -329,7 +329,7 @@ api instance를 사용하여 코드의 재사용성을 높이고 api 로직을 �
 ## 🫱🏻‍🫲🏿 Commit Convention & Branch Strategy
 ### Commit Convention
 
-e.g.  FEAT: 로그인 유효성 검증 기능 구현 (개발 추가 ❌ / 구현 ✅)
+e.g.  FEAT: 로그인 유효성 검증 기능 구현
 
 | 태그 | 설명 (한국어로만 작성하기) |
 | --- | --- |
