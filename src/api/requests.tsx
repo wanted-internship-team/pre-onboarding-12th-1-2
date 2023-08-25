@@ -1,13 +1,15 @@
 import { instance, accessInstance } from './axiosInstance';
+import { AxiosResponse } from 'axios';
 import {
   IAuthInfo,
   ICreateTodoRequeset,
   IUpdateTodoRequest,
   IDeleteTodoRequest,
+  ISignInResponse,
 } from '../types/api';
 import { ITodoList, ITodo } from '../types/todo';
 
-export const postSignUp = async ({ email, password }: IAuthInfo) => {
+export const postSignUp = async ({ email, password }: IAuthInfo): Promise<AxiosResponse> => {
   const res = await instance.post('/auth/signup', {
     email,
     password,
@@ -15,12 +17,12 @@ export const postSignUp = async ({ email, password }: IAuthInfo) => {
   return res;
 };
 
-export const postSignIn = async ({ email, password }: IAuthInfo) => {
+export const postSignIn = async ({ email, password }: IAuthInfo): Promise<ISignInResponse> => {
   const res = await instance.post('/auth/signin', {
     email,
     password,
   });
-  return res;
+  return res.data;
 };
 
 export const postTodo = async ({ todo }: ICreateTodoRequeset) => {
