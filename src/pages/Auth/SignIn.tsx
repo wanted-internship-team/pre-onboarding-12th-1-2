@@ -1,11 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { postSignIn } from '../api/requests';
-import useForm from '../hooks/useForm';
-import Form from '../components/auth/Form';
+import useForm from '../../hooks/useForm';
+import Form from '../../components/Auth/Form';
+import { useAuthContext } from '../../context/AuthContext';
 
 export default function SignIn() {
   const navigate = useNavigate();
+  const auth = useAuthContext();
 
   const { values, validValues, handleChange } = useForm({
     initialValues: { email: '', password: '' },
@@ -14,12 +15,10 @@ export default function SignIn() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await postSignIn(values);
-      if (res.status === 200) {
+      await auth.signin(values, () => {
         alert('로그인 되었습니다!');
-        localStorage.setItem('access_token', res.data.access_token);
         navigate('/todo');
-      }
+      });
     } catch (err) {
       console.error(err);
     }
