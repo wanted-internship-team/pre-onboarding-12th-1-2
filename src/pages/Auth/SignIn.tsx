@@ -24,15 +24,17 @@ export default function SignIn() {
   };
 
   return (
-    <>
-      <h1>로그인</h1>
-      <Form
-        handleSubmit={handleSubmit}
-        values={values}
-        validValues={validValues}
-        handleChange={handleChange}
-        pageName='signIn'
-      />
-    </>
+    <div className='bg-black-100 mt-[160px]'>
+      <div className='w-[460px] my-0 mx-auto rounded-[16px] bg-white p-[20px]'>
+        <h1 className='mb-[24px] font-bold text-[24px]'>로그인</h1>
+        <Form
+          handleSubmit={handleSubmit}
+          values={values}
+          validValues={validValues}
+          handleChange={handleChange}
+          pageName='signIn'
+        />
+      </div>
+    </div>
   );
 }

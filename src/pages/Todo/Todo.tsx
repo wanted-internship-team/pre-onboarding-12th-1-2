@@ -40,27 +40,29 @@ export default function Todo() {
   }, []);
 
   return (
-    <div className='max-w-3xl'>
-      <h1 className='font-semibold text-[24px]'>오늘의 할 일</h1>
-      <form
-        onSubmit={handleSubmit}
-        className='flex justify-between gap-x-4 w-full border border-gray-300 rounded-[8px] pl-[12px] pr-[4px] mt-[16px] mb-[24px]'
-      >
-        <Input
-          id='todo'
-          dataTestId={DATA_TEST_ID.INPUT.TODO}
-          value={todo}
-          onChange={handleChange}
-        />
-        <button
-          type='submit'
-          data-testid={DATA_TEST_ID.BUTTON.TODO_ADD}
-          className='text-blue-600 p-2 bg-white font-semibold'
+    <div className='bg-black-100 mt-[160px]'>
+      <div className='w-[460px] my-0 mx-auto rounded-[16px] bg-white p-[20px]'>
+        <h1 className='mb-[24px] font-bold text-[24px]'>오늘의 할 일</h1>
+        <form
+          onSubmit={handleSubmit}
+          className='flex justify-between gap-x-4 w-full border border-gray-300 rounded-[8px] pl-[12px] pr-[4px] mt-[16px] mb-[24px]'
         >
-          추가
-        </button>
-      </form>
-      <TodoList />
+          <Input
+            id='todo'
+            dataTestId={DATA_TEST_ID.INPUT.TODO}
+            value={todo}
+            onChange={handleChange}
+          />
+          <button
+            type='submit'
+            data-testid={DATA_TEST_ID.BUTTON.TODO_ADD}
+            className='text-blue-600 p-2 bg-white font-semibold'
+          >
+            추가
+          </button>
+        </form>
+        <TodoList />
+      </div>
     </div>
   );
 }

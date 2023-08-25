@@ -23,7 +23,7 @@ export default function Form({
 
   return (
     <div>
-      <form className='w-full max-w-sm gap-4' onSubmit={handleSubmit}>
+      <form className='flex flex-col w-full gap-4 ' onSubmit={handleSubmit}>
         <Input
           id='email'
           type='email'
@@ -57,16 +57,16 @@ export default function Form({
           {pageName === 'signIn' ? '로그인' : '회원가입'}
         </button>
         {pageName === 'signIn' ? (
-          <p>
+          <p className='mt-[24px] text-center'>
             계정이 없으신가요?{' '}
-            <Link to={URL.SIGN_UP} className='text-blue-500 italic'>
+            <Link to={URL.SIGN_UP} className='text-blue-500'>
               가입하기
             </Link>
           </p>
         ) : (
-          <p>
+          <p className='mt-[24px] text-center'>
             이미 계정이 있으신가요?{' '}
-            <Link to={URL.SIGN_IN} className='text-blue-500 italic'>
+            <Link to={URL.SIGN_IN} className='text-blue-500'>
               로그인하기
             </Link>
           </p>

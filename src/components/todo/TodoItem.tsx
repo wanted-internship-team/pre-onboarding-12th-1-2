@@ -11,6 +11,7 @@ interface IToDoItemProps {
 export default function TodoItem({ todoData, onClickUpdate, onClickDelete }: IToDoItemProps) {
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const { id, todo, isCompleted } = todoData;
+  // 상태값 관리
   const [content, setContent] = useState(todo);
 
   return (

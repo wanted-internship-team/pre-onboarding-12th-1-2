@@ -23,11 +23,11 @@ export default function Input({
 }: IInputProps) {
   return (
     <>
-      <div className='w-full md:flex md:items-center mb-6'>
+      <div className='flex flex-col'>
         <div className=''>
           <label
             htmlFor={id}
-            className='block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name'
+            className='block text-gray-500 font-bold text-left pr-4" for="inline-full-name mb-[4px]'
           >
             {labelText}
           </label>
@@ -44,7 +44,7 @@ export default function Input({
             // autoFocus
           />
         </div>
-        {!isValid && <p className='text-red-500 text-xs italic'>{errorMsg}</p>}
+        {!isValid && <p className='text-red-500 text-xs'>{errorMsg}</p>}
       </div>
     </>
   );
