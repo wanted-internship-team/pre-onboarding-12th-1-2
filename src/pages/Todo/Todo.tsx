@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Input from '../../components/todos/Input';
+import Input from '../../components/todo/Input';
 import { DATA_TEST_ID } from '../../constants';
 import { postTodo, getTodoList } from '../../api/requests';
-import TodoList from '../../components/todos/TodoList';
+import TodoList from '../../components/todo/TodoList';
 import { useTodoContext } from '../../context/TodoContext';
 
 export default function Todo() {
