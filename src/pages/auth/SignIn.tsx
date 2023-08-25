@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
-import Form from '../../components/Auth/Form';
+import Form from '../../components/auth/Form';
 import { useAuthContext } from '../../context/AuthContext';
 
 export default function SignIn() {
@@ -16,7 +16,6 @@ export default function SignIn() {
     e.preventDefault();
     try {
       await auth.signin(values, () => {
-        alert('로그인 되었습니다!');
         navigate('/todo');
       });
     } catch (err) {
@@ -25,15 +24,17 @@ export default function SignIn() {
   };
 
   return (
-    <>
-      <h1>로그인</h1>
-      <Form
-        handleSubmit={handleSubmit}
-        values={values}
-        validValues={validValues}
-        handleChange={handleChange}
-        pageName='signIn'
-      />
-    </>
+    <div className='bg-black-100 mt-[160px]'>
+      <div className='w-[460px] my-0 mx-auto rounded-[16px] bg-white p-[20px]'>
+        <h1 className='mb-[24px] font-bold text-[24px]'>로그인</h1>
+        <Form
+          handleSubmit={handleSubmit}
+          values={values}
+          validValues={validValues}
+          handleChange={handleChange}
+          pageName='signIn'
+        />
+      </div>
+    </div>
   );
 }

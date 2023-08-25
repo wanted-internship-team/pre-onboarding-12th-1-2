@@ -1,7 +1,7 @@
 import React from 'react';
 import { createContext, useContext, useState } from 'react';
 import { postSignUp, postSignIn } from '../api/requests';
-import { IAuthInfo } from '../types/api';
+import { IAuthInfo } from '../types/auth';
 import { AxiosResponse } from 'axios';
 
 type AuthProviderProps = {
@@ -17,17 +17,26 @@ export const authContext = createContext<AuthProviderProps | null>(null);
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [token, setToken] = useState(localStorage.getItem('access_token'));
 
-  const signup = ({ email, password }: IAuthInfo, callback?: () => void) => {
-    return postSignUp({ email, password }).then((res) => {
-      if (callback) callback();
+  const signup = async ({ email, password }: IAuthInfo, callback?: () => void) => {
+    try {
+      const res = await postSignUp({ email, password });
+      if (res.status === 201) {
+        alert('회원가입이 완료되었습니다. 로그인을 진행해주세요.');
+        if (callback) callback();
+      }
       return res;
-    });
+    } catch (error) {
+      // 에러 처리
+      console.error('Signup failed:', error);
+      throw error; // 에러를 다시 던지거나 다른 처리를 할 수 있습니다.
+    }
   };
 
   const signin = ({ email, password }: IAuthInfo, callback?: () => void) => {
     return postSignIn({ email, password }).then(({ access_token }) => {
       setToken(access_token);
       localStorage.setItem('access_token', access_token);
+      alert('로그인 되었습니다!');
       if (callback) callback();
     });
   };

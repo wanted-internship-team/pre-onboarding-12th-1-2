@@ -1,13 +1,13 @@
 import { instance, accessInstance } from './axiosInstance';
 import { AxiosResponse } from 'axios';
+import { IAuthInfo, ISignInResponse } from '../types/auth';
 import {
-  IAuthInfo,
+  ITodoList,
+  ITodo,
   ICreateTodoRequeset,
   IUpdateTodoRequest,
   IDeleteTodoRequest,
-  ISignInResponse,
-} from '../types/api';
-import { ITodoList, ITodo } from '../types/todo';
+} from '../types/todo';
 
 export const postSignUp = async ({ email, password }: IAuthInfo): Promise<AxiosResponse> => {
   const res = await instance.post('/auth/signup', {

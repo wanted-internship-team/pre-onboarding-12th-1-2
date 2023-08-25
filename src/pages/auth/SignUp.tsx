@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
-import Form from '../../components/Auth/Form';
+import Form from '../../components/auth/Form';
 import { useAuthContext } from '../../context/AuthContext';
 
 export default function SignUp() {
@@ -15,11 +15,8 @@ export default function SignUp() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await auth.signup(values, () => {
-        if (res.status === 200) {
-          alert('회원가입이 완료되었습니다. 로그인을 진행해주세요.');
-          navigate('/signin');
-        }
+      await auth.signup(values, () => {
+        navigate('/signin');
       });
     } catch (err) {
       console.error(err);
@@ -27,15 +24,17 @@ export default function SignUp() {
   };
 
   return (
-    <>
-      <h1>회원가입</h1>
-      <Form
-        values={values}
-        validValues={validValues}
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
-        pageName='signUp'
-      />
-    </>
+    <div className='bg-black-100 mt-[160px]'>
+      <div className='w-[460px] my-0 mx-auto rounded-[16px] bg-white p-[20px]'>
+        <h1 className='mb-[24px] font-bold text-[24px]'>회원가입</h1>
+        <Form
+          values={values}
+          validValues={validValues}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          pageName='signUp'
+        />
+      </div>
+    </div>
   );
 }

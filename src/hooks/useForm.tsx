@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { REG } from '../constants';
-import { IAuthInfo } from '../types/api';
+import { IAuthInfo } from '../types/auth';
 
 interface IVaildValues {
   email: boolean;

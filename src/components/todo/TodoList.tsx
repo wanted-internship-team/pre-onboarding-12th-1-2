@@ -1,9 +1,8 @@
 import React from 'react';
-import { deleteTodo, putTodo } from '../../api/requests';
-import { ITodo } from '../../types/todo';
 import TodoItem from './TodoItem';
-import { IUpdateTodoRequest, IDeleteTodoRequest } from '../../types/api';
+import { deleteTodo, putTodo } from '../../api/requests';
 import { useTodoContext } from '../../context/TodoContext';
+import { ITodo, IUpdateTodoRequest, IDeleteTodoRequest } from '../../types/todo';
 
 export default function TodoList() {
   const { state: todoList, dispatch } = useTodoContext();

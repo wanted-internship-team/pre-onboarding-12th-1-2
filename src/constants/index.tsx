@@ -1,3 +1,5 @@
+export const BASE_URL = 'https://www.pre-onboarding-selection-task.shop/' as const;
+
 export const DATA_TEST_ID = {
   BUTTON: {
     SIGN_UP: 'signup-button',
@@ -25,4 +27,4 @@ export const URL = {
 export const REG = {
   email: /@/,
   password: /^.{8,}$/,
-};
+} as const;
