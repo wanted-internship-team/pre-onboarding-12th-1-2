@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
 import SignUp from '../pages/auth/SignUp';
 import SignIn from '../pages/auth/SignIn';
-import Todo from '../pages/todos/Todo';
+import Todo from '../pages/todo/Todo';
 import PublicRoute from '../pages/authenticated/PublicRoute';
 import PrivateRoute from '../pages/authenticated/PrivateRoute';
 import { AuthProvider } from '../context/AuthContext';
