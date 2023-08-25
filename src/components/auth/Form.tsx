@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Input from './Input';
 import { DATA_TEST_ID, URL } from '../../constants';
-import { IAuthInfo } from '../../types/api';
-import { IVaildValues } from '../../types/auth';
+import { IAuthInfo, IVaildValues } from '../../types/auth';
 
 interface IFormProps {
   values: IAuthInfo;

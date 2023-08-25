@@ -1,7 +1,6 @@
 import React from 'react';
 import { createContext, useContext, useReducer } from 'react';
-import { ITodo, ITodoList } from '../types/todo';
-import { IUpdateTodoRequest, IDeleteTodoRequest } from '../types/api';
+import { ITodo, ITodoList, IUpdateTodoRequest, IDeleteTodoRequest } from '../types/todo';
 
 // Reducer action type
 type ITodoAction =

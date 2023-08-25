@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { DATA_TEST_ID } from '../../constants';
-import { ITodo } from '../../types/todo';
-import { IUpdateTodoRequest, IDeleteTodoRequest } from '../../types/api';
+import { ITodo, IUpdateTodoRequest, IDeleteTodoRequest } from '../../types/todo';
 
 interface IToDoItemProps {
   todoData: ITodo;
