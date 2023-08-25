@@ -12,7 +12,21 @@ export default function TodoItem({ todoData, onClickUpdate, onClickDelete }: ITo
   const [isEditMode, setIsEditMode] = useState<boolean>(false);
   const { id, todo, isCompleted } = todoData;
   // 상태값 관리
-  const [content, setContent] = useState(todo);
+  const [editTodo, setEditTodo] = useState(todo);
+
+  const handleClickSubmit = () => {
+    if (!editTodo) {
+      alert('내용을 입력해주세요.');
+      return;
+    }
+    onClickUpdate({ id, todo: editTodo, isCompleted });
+    setIsEditMode(false);
+  };
+
+  const handleClickCancel = () => {
+    setEditTodo(todo);
+    setIsEditMode(false);
+  };
 
   return (
     <>
@@ -56,19 +70,16 @@ export default function TodoItem({ todoData, onClickUpdate, onClickDelete }: ITo
               type='text'
               data-test-id={DATA_TEST_ID.INPUT.MODIFY_TODO}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                setContent(e.target.value);
+                setEditTodo(e.target.value);
               }}
-              value={content}
+              value={editTodo}
               autoFocus
             />
             <div className='shrink-0'>
               <button
                 type='button'
                 data-test-id={DATA_TEST_ID.BUTTON.TODO_SUBMIT}
-                onClick={() => {
-                  onClickUpdate({ id, todo: content, isCompleted });
-                  setIsEditMode(false);
-                }}
+                onClick={handleClickSubmit}
                 className='bg-blue-400 hover:bg-blue-500 text-xs text-white font-medium py-1 px-2 mx-1 rounded focus:outline-none focus:shadow-outline'
               >
                 제출
@@ -76,10 +87,7 @@ export default function TodoItem({ todoData, onClickUpdate, onClickDelete }: ITo
               <button
                 type='button'
                 data-test-id={DATA_TEST_ID.BUTTON.TODO_CANCEL}
-                onClick={() => {
-                  setContent(todo);
-                  setIsEditMode(false);
-                }}
+                onClick={handleClickCancel}
                 className='bg-red-400 hover:bg-red-500 text-xs text-white font-medium py-1 px-2 mx-1 rounded focus:outline-none focus:shadow-outline'
               >
                 취소

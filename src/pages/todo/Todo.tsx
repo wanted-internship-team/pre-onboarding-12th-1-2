@@ -12,6 +12,10 @@ export default function Todo() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!todo) {
+      return alert('할 일을 입력해주세요');
+    }
+
     try {
       const res = await postTodo({ todo });
       if (res.status === 201) {
