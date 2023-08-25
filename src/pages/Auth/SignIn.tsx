@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
-import Form from '../../components/Auth/Form';
+import Form from '../../components/auth/Form';
 import { useAuthContext } from '../../context/AuthContext';
 
 export default function SignIn() {
@@ -16,7 +16,6 @@ export default function SignIn() {
     e.preventDefault();
     try {
       await auth.signin(values, () => {
-        alert('로그인 되었습니다!');
         navigate('/todo');
       });
     } catch (err) {
