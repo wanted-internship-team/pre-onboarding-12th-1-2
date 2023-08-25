@@ -37,10 +37,10 @@ export default function TodoItem({ todoData, onClickUpdate, onClickDelete }: ITo
           onChange={() => {
             onClickUpdate({ id, todo, isCompleted: !isCompleted });
           }}
-          className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+          className='shrink-0 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
         />
         {!isEditMode ? (
-          <div className='flex justify-between flex-grow'>
+          <div className='min-w-[100px] flex justify-between flex-grow'>
             <p className='max-w-[520px] border-transparent border-b-2 text-ellipsis overflow-hidden whitespace-nowrap'>
               {todo}
             </p>
