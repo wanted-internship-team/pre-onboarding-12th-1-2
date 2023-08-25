@@ -10,8 +10,8 @@ export default function TodoList() {
 
   const handleUpdate = async ({ id, todo, isCompleted }: IUpdateTodoRequest) => {
     try {
-      await putTodo({ id, todo, isCompleted });
       dispatch({ type: 'UPDATE_TODO', payload: { id, todo, isCompleted } });
+      await putTodo({ id, todo, isCompleted });
     } catch (err) {
       console.error(err);
     }
@@ -19,8 +19,8 @@ export default function TodoList() {
 
   const handleDelete = async (id: IDeleteTodoRequest) => {
     try {
-      await deleteTodo(id);
       dispatch({ type: 'DELETE_TODO', payload: id });
+      await deleteTodo(id);
     } catch (err) {
       console.error(err);
     }
